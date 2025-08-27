@@ -20,7 +20,9 @@ half a year before that one frend recomended that I shuld lern scripteble object
 
 When a weapon is picked up the gun gets the scripteble object that weapon uses and reads it and adds all the functions it uses into an event. When fiering it first checs whitch fire mode it uses then it runs the events.
 
-Bullets work in a similar maner wear exept it has 3 seperet events. One when it is fired, one during fligth and one when it hits some thing. 
+Bullets work in a similar maner exept it has 3 seperet events. One when it is fired, one during fligth and one when it hits some thing. 
+
+Acording to the other team members it was easy to create and edit weapons and bullets.
 <details>
 <summary> e </summary>
 boo
