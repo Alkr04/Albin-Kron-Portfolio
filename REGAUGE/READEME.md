@@ -41,13 +41,6 @@ Acording to the other team members it was easy to create and edit weapons and bu
   </trt>
 </table>
 
-<details>
-<summary> e </summary>
-boo
-</details>
-
-
-
 ### My other contributions
 
 * the doors
