@@ -12,7 +12,8 @@ Team: 3 Programers, 4 Artists
 
 <table>
   <tr>
-    <tdt><img src="Gifs/4PlayerGameplay.gif" /></tdt>
+    <td><img src="Gifs/4PlayerGameplay.gif" /></td>
+    <td><img src="Gifs/SpinnyPlate.gif" /></td>
   </tr>
 </table>
 
