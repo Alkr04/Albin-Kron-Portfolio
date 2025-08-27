@@ -10,7 +10,16 @@ Genre: Couch Co-op, Shooter
 
 Team: 3 Programers, 4 Artists
 
-# My contribution
+<table>
+  <tr>
+    <tdt><img src="Gifs/4PlayerGameplay.gif" /></tdt>
+  </tr>
+</table>
+
+## My contribution
+
+### Weapon and bullet system
+
 
 I was the primary developer behind the weapon system. 
 
@@ -23,13 +32,25 @@ When a weapon is picked up the gun gets the scripteble object that weapon uses a
 Bullets work in a similar maner exept it has 3 seperet events. One when it is fired, one during fligth and one when it hits some thing. 
 
 Acording to the other team members it was easy to create and edit weapons and bullets.
+
+<table>
+  <trt>
+    <td><img src="Pictures/ExampleGunSettings.png"/></td>
+    <td><img src="Pictures/ExampleBulletSettings.png"/><td>
+  </trt>
+</table>
+
 <details>
 <summary> e </summary>
 boo
 </details>
 
-<table>
-  <tr>
-    <tdt><img src="Gifs/4PlayerGameplay.gif" /></tdt>
-  </tr>
-</table>
+
+
+### My other contributions
+
+* the doors
+
+* the bullet pools
+
+* the audio system 
