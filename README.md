@@ -1,7 +1,7 @@
 # Albin-Kron-Portfolio
 A portfolio containing things I have worked on
 # Games
-## [REGAUGE](https://github.com/Alkr04/Albin-Kron-Portfolio/blob/main/REGAUGE/READEME.md)
+## [REGAUGE](https://github.com/Alkr04/Albin-Kron-Portfolio/blob/main/REGAUGE/READEME.md) <--- click here to see more
 System Programer
 
 Duration: 04/2025 - 06/2025
