@@ -12,7 +12,12 @@ Genre: Couch Co-op, Shooter
 
 Team: 3 Programers, 4 Artists
 
-
+<table>
+  <tr>
+    <td><img src="REGAUGE/Gifs/4PlayerGameplay.gif" /></td>
+    <td><img src="REGAUGE/Gifs/SpinnyPlate.gif" /></td>
+  </tr>
+</table>
 
 ## Shellscape
 Enemy Programer
