@@ -30,6 +30,155 @@ half a year before that one frend recomended that I shuld lern scripteble object
 
 When a weapon is picked up the gun gets the scripteble object that weapon uses and reads it and adds all the functions it uses into an event. When fiering it first checs whitch fire mode it uses then it runs the events.
 
+when a player colides whit a weapon pickupp the weapon checks if the player has GunScript.cs some were and if it does it starts the NewGun funktion in the GunScript.cs whit the pickupp's stored weapon scripteble object. In the funktion it stops the player from shoting, ends the curent animation and stops the audio before playing the pick up sound. After that it starts reading and adding all the variebles from the scripteble object by changing valuse and adding the corect funktions into an event.
+
+
+
+<details>
+  
+  <summary> picking up gun </summary>
+
+```csharp
+public void NewGun(gunBase newgun)
+    {
+        if (!playerCharacter) { return; }
+        fiering = false;
+        if (gun.loopingAnimation) { animator.SetBool("IsFiring", fiering); }
+        gun = newgun;
+        source.loop = false;
+        AudioClip clip = GameManager.Instance.AudioModulator(gun.equipSound, source, gun.equipMinPitch, gun.equipMaxPitch, gun.equipVolume);
+        if (clip) { source.PlayOneShot(clip); }
+        currentAmmo = gun.bulletCapasity;
+        CheckForGun();
+
+        if (laserSight)
+        {
+            laserSight.laserIsOn = gun.laserSight;
+            laserSight.laserRange = gun.laserSightRange;
+        }
+        if (gun.shotGun)
+        {
+            fire -= Scatter;
+            fire -= Fire;
+            fire += Scatter;
+        }
+        else
+        {
+            fire -= Fire;
+            fire -= Scatter;
+            fire += Fire;
+        }
+        if (gun.doesItHaveRecoil)
+        {
+            fire -= Recoil;
+            fire += Recoil;
+        }
+        else
+        {
+            fire -= Recoil;
+        }
+    }
+```
+  
+</details>
+
+the shoot funktion starts when a player fiers a weapon. It determins if the player can fire, what fire mode the wapon uses, how meny shots per key press, if it fires like a shot gun based on the scripteble object stored as "gun". then it calls the bullet pool to send a bullet.
+
+<details>
+  <summary>shoting</summary>
+
+  ```csharp
+public void Shoot()
+    {
+        if (disableGun) { return; }
+
+        if (currentAmmo > 0 && canFire && !keyDown && playerCharacter.playerMovement.CheckDashIntractability())
+        {
+            currentAmmo -= gun.consumed;
+            SnapRotation();
+            CheckForGun();
+            canFire = false;
+            fireMode[gun.fireMode.ToString()].Invoke();
+        }
+        else if (!keyDown && currentAmmo <= 0)
+        {
+            keyDown = true;
+            DepressKey();
+        }
+    }
+
+void SingleShot()
+    {
+        keyDown = true;
+        StartCoroutine(Burst());
+        StartCoroutine(Cooldown(gun.fireRate / firerateModifier));
+    }
+    void AutoShot()
+    {
+        StartCoroutine(Burst());
+        StartCoroutine(Cooldown(gun.fireRate / firerateModifier));
+    }
+
+IEnumerator Burst()
+    {
+        for (int i = 0; i < gun.burstAmount; i++)
+        {
+            fire.Invoke();
+            if (!fiering)
+            {
+                StartCoroutine(FireAudio());
+            }
+            yield return new WaitForSeconds(gun.timeBetweneBurstShots);
+
+        }
+        if (currentAmmo <= 0)
+        {
+            NewGun(baseGun);
+        }
+    }
+
+public void Fire()
+    {
+        Vector3 firePos = HandleFirePos();
+        Quaternion rotation = Quaternion.LookRotation(Vector3.up, GetAimDirection());
+        Vector3 euler = rotation.eulerAngles;
+
+        GameObject bullet = PoolManager.poolInstance.GiveBullet(gun.bullet, firePos, Quaternion.Euler(new Vector3(euler.x, euler.y, euler.z + UnityEngine.Random.Range(-gun.spread, gun.spread))), gun.bulletBase,
+            transform.root.GetComponent<Collider>(), this);
+
+        StartMuzzleFlash(firePos, rotation);
+        StartShootAnim();
+    }
+
+void Scatter()
+    {
+        float temp = gun.spread;
+
+        Quaternion rotation = Quaternion.LookRotation(Vector3.up, GetAimDirection());
+        Vector3 euler = rotation.eulerAngles;
+        Vector3 firePos = HandleFirePos();
+
+        for (int i = 0; i < gun.pellets; i++)
+        {
+            if (temp >= 0)
+            {
+                temp -= (gun.spread / gun.pellets) * 2 * UnityEngine.Random.Range(0.5f, 1.5f);
+            }
+            temp *= -1;
+
+            //GameObject bullet = Instantiate(gun.bullet, firePos, Quaternion.Euler(new Vector3(euler.x, euler.y, euler.z + temp)));
+            GameObject bullet = PoolManager.poolInstance.GiveBullet(gun.bullet, firePos, Quaternion.Euler(new Vector3(euler.x, euler.y, euler.z + temp)), gun.bulletBase, transform.root.GetComponent<Collider>(), this);
+            //InitializeBullet(bullet, firePos);
+
+        }
+
+
+        StartMuzzleFlash(firePos, rotation);
+        StartShootAnim();
+    }
+```
+</details>
+
 Bullets work in a similar maner exept it has 3 seperet events. One when it is fired, one during fligth and one when it hits some thing. 
 
 Acording to the other team members it was easy to create and edit weapons and bullets.
