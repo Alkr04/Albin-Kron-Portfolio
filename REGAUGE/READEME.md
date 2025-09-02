@@ -28,11 +28,7 @@ The game was originaly pitched as a grid based 2 player turn based Party/Strateg
 
 half a year before that one frend recomended that I shuld lern scripteble objects do to how usefull they are. And I tested them out on a project and foud them to be realy good for creating diferent setings for the same script. Thus when I was planing how the wapon system was going to work I quicly concluded that scripteble objects were going to be a good fit. so I created one gun script that holds all the functions for the gun. and a scripteble object for the gun's setings.
 
-When a weapon is picked up the gun gets the scripteble object that weapon uses and reads it and adds all the functions it uses into an event. When fiering it first checs whitch fire mode it uses then it runs the events.
-
-when a player colides whit a weapon pickupp the weapon checks if the player has GunScript.cs some were and if it does it starts the NewGun funktion in the GunScript.cs whit the pickupp's stored weapon scripteble object. In the funktion it stops the player from shoting, ends the curent animation and stops the audio before playing the pick up sound. After that it starts reading and adding all the variebles from the scripteble object by changing valuse and adding the corect funktions into an event.
-
-
+When a player picks up a weapon it assignes all the properties of the weapon skripteble object to the players weapon and adds the proper funktions to unity events.
 
 <details>
   
@@ -179,9 +175,51 @@ void Scatter()
 ```
 </details>
 
-Bullets work in a similar maner exept it has 3 seperet events. One when it is fired, one during fligth and one when it hits some thing. 
+Bullets work in a similar maner to how picking up new guns work. Exept that it has 3 seperet events that the diferent funktions use. one when they have just ben fiered, when while flying and one when it hits something. but nothing curently uses the one for when it has just ben fiered. there is also a 4th event if the weapon is a area of effect.
 
-Acording to the other team members it was easy to create and edit weapons and bullets.
+<details>
+<summary> bullets</summary>
+
+```csharp
+void SubscribeComponents()
+    {
+        if (bullet.bounce)
+        {
+            hit += Bounce;
+        }
+        if (bullet.aoe)
+        {
+            hit += AreaOfEffect;
+        }
+        if (bullet.aoeKnockBack)
+        {
+            aoeEffect += AOEKnockBack;
+        }
+        if (!bullet.aoeDamage)
+        {
+            hit += Damage;
+        }
+        else
+        {
+            aoeEffect += CallDamagePlayer;
+        }
+        if (bullet.destroyOnCollition)
+        {
+            hit += DestroyBullet;
+        }
+        if (bullet.magnetism)
+        {
+            flying += Magnetize;
+        }
+    }
+
+```
+  
+</details>
+
+We were supose to have just 1 bullet prefab and change every thing about it including it's looks and VFX when it was fired but do to time constraints and lack of knolage we did not manage to implement that. Instead each bullet has it's own prefab making this system redundent in the curent version other then the ease of edeting the bullet's atributes. The ground work is there if we want to add it in the future.
+
+Acording to the other developers the system is quite easy to use and perfect for making plenty of guns.
 
 <table>
   <trt>
@@ -192,7 +230,7 @@ Acording to the other team members it was easy to create and edit weapons and bu
 
 ### My other contributions
 
-* the doors
+* the pilote doors
 
 * the bullet pools
 
