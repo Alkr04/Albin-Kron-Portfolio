@@ -22,13 +22,14 @@ Team: 3 Programers, 4 Artists
 ### Weapon and bullet system
 
 
-I was the primary developer behind the weapon system. 
+I was the primary developer behind the weapon system.
 
-The game was originaly pitched as a grid based 2 player turn based Party/Strategy game whit plenty of weapons. originaly I was drawn in by the turn and grid based idea of the game but those Ideas were discarded shortly before proper development began do to being to complex and time consuming. But during the designe meatings we also expanded a bit on the idea of multeple weapons whitch ended up capturing my imagination. So while we were still consepting the game I was also starting to imagine how the game culd have multeple weapons whitout spending to much time on each indevidual weapon.
+The game was originally pitched as a grid based 2 player turn based Party/Strategy game with plenty of weapons. Originally I was drawn in by the turn and grid based idea of the game but those Ideas were discarded shortly before proper development began due to being too complex and time consuming. But during the design meetings we also expanded a bit on the idea of multiple weapons which ended up capturing my imagination. So while we were still concepting the game I was also starting to imagine how the game could have multiple weapons without spending too much time on each individual weapon.
 
-half a year before that one frend recomended that I shuld lern scripteble objects do to how usefull they are. And I tested them out on a project and foud them to be realy good for creating diferent setings for the same script. Thus when I was planing how the wapon system was going to work I quicly concluded that scripteble objects were going to be a good fit. so I created one gun script that holds all the functions for the gun. and a scripteble object for the gun's setings.
+Half a year before that, one friend recommended that I should learn scriptable objects due to how useful they are. And I tested them out on a project and found them to be really good for creating different settings for the same script. Thus when I was planning how the weapon system was going to work I quickly concluded that scriptable objects were going to be a good fit. so I created one gun script that holds all the functions for the gun. and a scriptable object for the gun's settings.
 
-When a player picks up a weapon it assignes all the properties of the weapon skripteble object to the players weapon and adds the proper funktions to unity events.
+When a player picks up a weapon it assigns all the properties of the weapon scriptable object to the player's weapon and adds the proper functions to unity events.
+
 
 <details>
   
@@ -78,7 +79,7 @@ public void NewGun(gunBase newgun)
   
 </details>
 
-the shoot funktion starts when a player fiers a weapon. It determins if the player can fire, what fire mode the wapon uses, how meny shots per key press, if it fires like a shot gun based on the scripteble object stored as "gun". then it calls the bullet pool to send a bullet.
+The Shoot function starts when a player fires a weapon. It determines if the player can fire, what fire mode the weapon uses, how many shots per key press, if it fires like a shot gun based on the scriptable object stored as "gun". then it calls the bullet pool to send a bullet.
 
 <details>
   <summary>shoting</summary>
@@ -175,7 +176,8 @@ void Scatter()
 ```
 </details>
 
-Bullets work in a similar maner to how picking up new guns work. Exept that it has 3 seperet events that the diferent funktions use. one when they have just ben fiered, when while flying and one when it hits something. but nothing curently uses the one for when it has just ben fiered. there is also a 4th event if the weapon is a area of effect.
+Bullets work in a similar manner to how picking up new guns work. Except that it has 3 separate events that the different functions use. one when they have just been fired, when while flying and one when it hits something. but nothing currently uses the one for when it has just been fired. There is also a 4th event if the weapon is an area of effect.
+
 
 <details>
 <summary> bullets</summary>
@@ -217,9 +219,10 @@ void SubscribeComponents()
   
 </details>
 
-We were supose to have just 1 bullet prefab and change every thing about it including it's looks and VFX when it was fired but do to time constraints and lack of knolage we did not manage to implement that. Instead each bullet has it's own prefab making this system redundent in the curent version other then the ease of edeting the bullet's atributes. The ground work is there if we want to add it in the future.
+We were supposed to have just 1 bullet prefab and change everything about it including its looks and VFX when it was fired but due to time constraints and lack of knowledge we did not manage to implement that. Instead each bullet has its own prefab making this system redundant in the current version other than the ease of editing the bullet's attributes. The ground work is there if we want to add it in the future.
 
-Acording to the other developers the system is quite easy to use and perfect for making plenty of guns.
+According to the other developers the system is quite easy to use and perfect for making plenty of guns.
+
 
 <table>
   <trt>
