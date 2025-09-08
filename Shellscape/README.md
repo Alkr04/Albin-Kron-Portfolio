@@ -66,6 +66,180 @@ private void Awake()
 
 The phases themselves inherited from a script that held all the boss's attacks wich inherits from a BasePhase script.
 
+It was made early on when we were still planing on have multiple bosses and for that purpose it whuld have worked fine since the BasePhase script culd hold common funktions for all bosses. While the attack onse culd hold there more specialised attack funktions. and the actual phase scripts culd hold the logic of when tings happens.
+
+<details>
+
+<summary>BasePhaseScript</summary>
+  
+```csharp
+ public void resetpositon()
+    {
+        agent.SetDestination(transform.position);
+    }
+    public void Move()
+    {
+        agent.SetDestination(player.transform.position);
+    }
+
+```
+  
+</details>
+
+<details>
+<summary>EnemyAttacks</summary>
+  
+```csharp
+  
+private void Awake()
+    {
+        UrchinSpawnerScript = FindObjectOfType<UrchinSpawner>();
+        enemy = GetComponentInParent<Base_enemy>();
+        agent = GetComponentInParent<NavMeshAgent>();
+        weekpoint = transform.parent.GetComponentInChildren<weekpoint>();
+    }
+    
+ 
+    public IEnumerator cooldown(float t)
+    {
+        
+        enemy.atta = true;
+        attack.parent.start();
+        attack.still = false;
+        yield return null;
+    }
+
+    public IEnumerator dublewave(int amount)
+    {
+        float firstWaveDelay = 2.9f;
+        float secondWaveDelay = 1.0f;
+        stunable = true;
+
+        if (amount == 1)
+        {
+            SoundcueHandler.PlayWaveCue();
+            StartCoroutine(enemy.weakPoint.SingleShockwave());
+            enemy.GetComponentInChildren<MantisAnimator>().anim.SetTrigger("Shockwave");
+        }
+        else if(amount > 1)
+        {
+            SoundcueHandler.PlayDoubleWaveCue();
+            StartCoroutine(enemy.weakPoint.DoubleShockwave());
+            amount = 2;
+            enemy.GetComponentInChildren<MantisAnimator>().anim.SetTrigger("Double Shockwave");
+            firstWaveDelay = 2.0f;
+            secondWaveDelay = 0.85f;
+        }
+
+        WaveAnim = true;
+        yield return new WaitForSeconds(0.7f);
+        StartCoroutine(weekpoint.MoveCollider());
+        yield return new WaitForSeconds(firstWaveDelay - 0.7f);
+        enemy.stop();
+
+        if (!enemy.volnereble) 
+        {
+            for (int j = 0; j < amount; j++)
+            {
+                if (!enemy.volnereble)
+                {
+                    WaveAnim = false;
+                    attack.shockwave(shockwavespeed, shockwavezise, shockwaverange);
+                    if (j == 0)
+                    {
+                       //spawning urchins
+                       UrchinSpawnerScript.WhichPhaseForUrchin();
+                    }
+                    yield return new WaitForSeconds(secondWaveDelay);
+                    WaveAnim = true;
+                }
+            }
+        }
+
+        WaveAnim = false;
+        stunable = false;
+        enemy.start();
+        StartCoroutine(cooldown(shockwavespeed));
+    }
+
+    public IEnumerator elestickdelay(float time)
+    {
+        StartCoroutine(enemy.weakPoint.Fist());
+
+        ElastickAnim = true;
+        SoundcueHandler.PlayFistCue();
+        enemy.atta = false;
+        stunable = true;
+        enemy.GetComponentInChildren<MantisAnimator>().anim.SetTrigger("Punch 0");
+        yield return new WaitForSeconds(time);
+        ElastickAnim = false;
+        if (!enemy.volnereble && !PlayerSlice.SliceMode())
+        {
+            attack.Elastick(elastickrange, elastickspeed, elastickreturnspeed);
+        }
+        else
+        {
+            enemy.atta = true;
+            stunable = false;
+        }
+    }
+```
+  
+</details>
+
+<details>
+
+<summary>Phase 3</summary>
+
+```csharp
+ public override void phase()
+    {
+        if (enemy.Range(startpunchrange) && !enemy.volnereble && !PlayerSlice.SliceMode())
+        {
+            resetpositon();
+        }
+        if (enemy.Range(startelastickrange) && enemy.atta && !enemy.volnereble && !PlayerSlice.SliceMode())
+        {
+            enemy.atta = false;
+            if (i % 4 == 0)
+            {
+                StartCoroutine(elestickdelay(elastickdelai));
+            }
+            else
+            {
+                attack.still = true;
+                StopCoroutine(dublewave(wavemount));
+                wavemount = Random.Range(1, 5);
+                StartCoroutine(dublewave(wavemount));
+            }
+            i++;
+            resetpositon();
+        }
+        else if (!enemy.Range(startpunchrange) && !enemy.volnereble && !PlayerSlice.SliceMode())
+        {
+            enemy.agent.SetDestination(enemy.target.position);
+        }
+        else
+        {
+            resetpositon();
+        }
+        
+    }
+```
+  
+</details>
+
+One problem whit it is that every ting is not centralized to those scripts. Several important parts of the attacks are in a seperate script. Some are there becos we did not originaly plan on having multeple phases and whuld have ben a significant amount of work to find all references to it and change them. Others are there becose they were suposed to be used by all bosses.
+
+I origanaly felt realy bad about this project and was thinking that it was all trash. But now after re reading my code I can see that I had a good base idea for how it whuld work whit multiple bosses.
+
+
+## my other contributions
+
+The main menue and the diferent windows there
+
+
+
 
 
 
