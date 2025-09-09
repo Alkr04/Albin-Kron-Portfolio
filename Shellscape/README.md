@@ -236,7 +236,8 @@ I origanaly felt realy bad about this project and was thinking that it was all t
 
 ## my other contributions
 
-The main menue and the diferent windows there
+The tweening of the windows in the main menue
+
 
 
 
