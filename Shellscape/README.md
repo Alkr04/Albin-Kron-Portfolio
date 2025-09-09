@@ -16,17 +16,14 @@ Team: 3 Programers, 3 Artists
 </table>
 
 # My contribution
-I was primaraly in charge of the enemy
+I was primarily in charge of the enemy
 
-the entire project was plagued by problems. which resulted in a lot of janky code and janky game play. if I culd go back I whuld defenstrate all the skripts about the enemy and restart.
-most problems came from bad planing and a ever changing scope. the game works and the enemy funktions just very janky. I did lern a lot from this project which defenetly helped in later projects.
 
-enouth whit my doom and gloom time to describe the hideus spagety that shuld be defenstrated.
+The project was plagued by problems. Most stemmed from bad planning and extreme overscoping. But the game came together in the end. I did learn a lot from this project due to all the problems and I think they helped me become a better programmer.
 
-in the original consept for the game there was supose to be 3 bosses. one for each programer and since I was supose to make the first one I tried to create a modular system that the others culd use for there bosses.
-Do to that I tried to use inheritence to make it easy but it ended upp over complicating the scripts since some are 4 inherentes deep. the single some what good use was for the phase system.
 
-I used a state machene to determine the phase the boss was on. For some reason I made it in the uppdate funktion instead of making a seperet funktion that only run when the boss takes damage.
+In the original concept for the game there were supposed to be 3 bosses. One for each programmer and since I was supposed to make the first one I tried to create a modular system that the others could use for their bosses. And to do that I figured that utilizing inheritance would be a good idea. And due to the boss having multiple phases I decided to use a state machine to keep track of the phases.
+
 
 <details>
 
@@ -70,9 +67,10 @@ private void Awake()
 ```
 </details>
 
-The phases themselves inherited from a script that held all the boss's attacks wich inherits from a BasePhase script.
+The phases themselves inherited from a script that held all the boss's attacks which inherits from a BasePhase script.
 
-It was made early on when we were still planing on have multiple bosses and for that purpose it whuld have worked fine since the BasePhase script culd hold common funktions for all bosses. While the attack onse culd hold there more specialised attack funktions. and the actual phase scripts culd hold the logic of when tings happens.
+It was made early on when we were still planning on having multiple bosses and for that purpose it would have worked fine since the BasePhase script could hold common functions for all bosses. While the attack ones could hold there more specialised attack funktions. and the actual phase scripts could hold the logic of when things happen.
+
 
 <details>
 
@@ -235,14 +233,16 @@ private void Awake()
   
 </details>
 
-One problem whit it is that every ting is not centralized to those scripts. Several important parts of the attacks are in a seperate script. Some are there becos we did not originaly plan on having multeple phases and whuld have ben a significant amount of work to find all references to it and change them. Others are there becose they were suposed to be used by all bosses.
+One problem with it is that everything is not centralized to those scripts. Several important parts of the attacks are in a separate script.The reason is becos we originally did not plan on having multiple phases but by the time we decided to add phases the script was already heavily integrated into multiple systems making it difficult to fully remove. And sadly we did not have time to do that. So it instead became a repository of functions that multiple scripts in the boss uses and a script other systems use to identify the boss.
 
-I origanaly felt realy bad about this project and was thinking that it was all trash. But now after re reading my code I can see that I had a good base idea for how it whuld work whit multiple bosses.
+I originally felt really bad about this project and was thinking that it was all trash. But now after re reading my code I can see that I had a system that would have worked with multiple bosses. Even if it would have needed a major rework. And considering how much the plan changed from week to week I'm actually rather happy with how it came out.
+
 
 
 ## my other contributions
 
-The tweening of the windows in the main menue
+The tweening of the windows in the main menu
+
 
 
 
