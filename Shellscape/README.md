@@ -9,6 +9,11 @@ Genre: First Person Shoter
 
 Team: 3 Programers, 3 Artists
 
+<table>
+  <tr>
+    <td><img src="Gifs/Shellscape1.gif" /></td>
+  </tr>
+</table>
 # My contribution
 I was primaraly in charge of the enemy
 
@@ -237,6 +242,7 @@ I origanaly felt realy bad about this project and was thinking that it was all t
 ## my other contributions
 
 The tweening of the windows in the main menue
+
 
 
 
