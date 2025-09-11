@@ -12,6 +12,7 @@ Team: 3 Programers, 3 Artists
 <table>
   <tr>
     <td><img src="Gifs/Shellscape1.gif" /></td>
+    <td><img src="Gifs/Shellscape2.gif" /></td>
   </tr>
 </table>
 
@@ -242,6 +243,7 @@ I originally felt really bad about this project and was thinking that it was all
 ## my other contributions
 
 The tweening of the windows in the main menu
+
 
 
 
