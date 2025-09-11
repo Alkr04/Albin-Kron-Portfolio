@@ -45,7 +45,7 @@ Team: 3 Programers, 3 Artists
 
 <table>
   <tr>
-    <td><img src="Shellscape/Gifs/Shellscape.gif" /></td>
+    <td><img src="Shellscape/Gifs/Shellscape1.gif" /></td>
   </tr>
 </table>
 
