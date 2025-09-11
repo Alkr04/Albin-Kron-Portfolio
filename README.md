@@ -9,7 +9,7 @@ REGAUGE is a fast paced multiplayer PvP game about defeating your friends in the
 
 ### Project info
 
-System Programer
+Role: System Programmer
 
 Duration: 04/2025 - 06/2025
 
@@ -19,6 +19,8 @@ Genre: Couch Co-op, Shooter
 
 Team: 3 Programers, 4 Artists
 
+[itch.io page](https://yrgo-game-creator.itch.io/regauge)
+
 <table>
   <tr>
     <td><img src="REGAUGE/Gifs/4PlayerGameplay.gif" /></td>
@@ -27,13 +29,14 @@ Team: 3 Programers, 4 Artists
 </table>
 
 ## [Shellscape](https://github.com/Alkr04/Albin-Kron-Portfolio/blob/main/Shellscape/README.md) <--- click here to see more
-Enemy Programer
 
 ### Game description
 
 One on one battle against the shrimp who punches with the force of a bullet. Hit his weak point to stun him and huck him before slicing him to pieces. Beat him and win the sushi price or die in disgrace.
 
 ### Project info
+
+Role: Enemy Programmer
 
 Duration: 11/2024 - 01/2025
 
@@ -42,6 +45,8 @@ Engine: Unity
 Genre: First Person Shoter
 
 Team: 3 Programers, 3 Artists
+
+[itch.io page](https://yrgo-game-creator.itch.io/shellscape)
 
 <table>
   <tr>
@@ -57,7 +62,8 @@ Team: 3 Programers, 3 Artists
 A simple test game to learn a bit of C++ and SDL3. The knowledge gained from it will be used for my upcoming graduation project.
 
 ### Project info
-Programer
+
+Role: Programmer
 
 Duration: 18/08/2025 - 22/08/2025
 
@@ -80,7 +86,7 @@ A simple horde survival game. survive for as long as you can with only a sword a
 
 ### Project info
 
-Programer
+Role: Programmer
 
 Duration: 03/2025 - 04/2025
 
@@ -90,6 +96,12 @@ Genre: First Person, Horde Survival
 
 Team: 1 programer
 
+<table>
+  <tr>
+    
+  </tr>
+</table>
+
 ## Robomania
 
 ### Game description
@@ -98,7 +110,7 @@ A simple platformer inspired by hollow knight. Save your creator or drown in oil
 
 ### Project info
 
-General Programer
+Role: General Programmer
 
 Duration: 01/2024 - 06/2024
 
