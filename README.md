@@ -65,6 +65,13 @@ Framework: SDL3
 
 Team: 1 programer
 
+<table>
+  <tr>
+    <td><img src="Extra_Gifs/Unamed_SDL3_Test1.gif" /></td>
+    <td><img src="Extra_Gifs/Unamed_SDL3_Test2.gif" /></td>
+  </tr>
+</table>
+
 ## Blade and Horde
 
 ### Game description
@@ -100,3 +107,10 @@ Engine: Unity
 Genre: Platformer
 
 Team: 1 Programer, 1 Artist
+
+<table>
+  <tr>
+    <td><img src="Extra_Gifs/Robomania1.gif" /></td>
+    <td><img src="Extra_Gifs/Robomania2.gif" /></td>
+  </tr>
+</table>
