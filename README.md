@@ -5,7 +5,7 @@ A portfolio containing things I have worked on
 
 ### Game description
 
-REGAUGE is a fast pased multiplayer PvP game about defeating your frends in the arena. The game contains a diverse arsenal of weapons ranging from standard pistols, shotguns and a uncontoleble automatic rifle that broke it's chains.
+REGAUGE is a fast paced multiplayer PvP game about defeating your friends in the arena. The game contains a diverse arsenal of weapons ranging from standard pistols, shotguns and an uncontrollable automatic rifle that broke its chains.
 
 ### Project info
 
@@ -31,7 +31,7 @@ Enemy Programer
 
 ### Game description
 
-One on one battle agains the scrimp who punches whit the force of a bullet. Beat him to gain the sushi prize or die in disgrace.
+One on one battle against the shrimp who punches with the force of a bullet. Hit his weak point to stun him and huck him before slicing him to pieces. Beat him and win the sushi price or die in disgrace.
 
 ### Project info
 
@@ -47,7 +47,7 @@ Team: 3 Programers, 3 Artists
 
 ### Game description
 
-A simple test game to lern a bit of C++ and SDL3. The knolage gained from it will be used for my upcoming graduation project.
+A simple test game to learn a bit of C++ and SDL3. The knowledge gained from it will be used for my upcoming graduation project.
 
 ### Project info
 Programer
@@ -62,7 +62,7 @@ Team: 1 programer
 
 ### Game description
 
-A simple horde survival game. survive for as long as you can whit only a sword and 50 shotgun shells.
+A simple horde survival game. survive for as long as you can with only a sword and 50 shotgun shells.
 
 ### Project info
 
@@ -80,7 +80,7 @@ Team: 1 programer
 
 ### Game description
 
-A simple platformer inspired by hollow knigth.
+A simple platformer inspired by hollow knight. Save your creator or drown in oil.
 
 ### Project info
 
