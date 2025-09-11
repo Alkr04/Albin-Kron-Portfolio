@@ -43,6 +43,12 @@ Genre: First Person Shoter
 
 Team: 3 Programers, 3 Artists
 
+<table>
+  <tr>
+    <td><img src="Shellscape/Gifs/Shellscape.gif" /></td>
+  </tr>
+</table>
+
 ## Unamed SDL3 Test
 
 ### Game description
