@@ -98,7 +98,8 @@ Team: 1 programer
 
 <table>
   <tr>
-    
+    <td><img src="Extra_Gifs/Blade_and_Horde1.gif" /></td>
+    <td><img src="Extra_Gifs/Blade_and_Horde2.gif" /></td>
   </tr>
 </table>
 
